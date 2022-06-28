@@ -1,0 +1,16 @@
+{
+    "anime": [
+        {
+            "destination": "E:\\Anime",
+            "location": "C:\\Users\\Marcel\\Downloads"
+        }
+    ],
+    "anime_names": [
+        {
+            "name": "tester"
+        },
+        {
+            "name": "My test"
+        }
+    ]
+}

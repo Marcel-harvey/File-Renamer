@@ -1,0 +1,118 @@
+def confirm_directory():
+
+    check_directory = json_anime.check_if_exists()
+
+    if not check_directory:
+
+        print('\nReselect destination and location of anime')
+
+        location = input('\nPlease enter the location of your downloads\n')
+        destination = input('\nPlease enter the destination where the anime will be moved to\n')
+
+        json_anime.set_dir(location, destination)
+
+        # Recursion to recheck if value in Json files
+        confirm_directory()
+
+    elif check_directory:
+        season_promt()
+
+
+def season_promt():
+
+    season = input('\nWhat season is this of the anime?\n')
+
+    try:
+        int(season)
+
+    except ValueError:
+        print('\nPlease enter a valid number from 1-9\n')
+
+        season_promt()
+
+    language_promt(season)
+
+
+def language_promt(season):
+
+    language = input('\nDubbed or Subbed? (d\s)\n')
+
+    if language.lower() == 'dubbed' or language.lower() == 'd':
+        language = 'dubbed'
+
+    elif language.lower() == 'subbed' or language.lower() == 's':
+        language = 'subbed'
+
+    else:
+        print('\nPlease enter a valid language choice')
+
+        language_promt()
+
+    confirm_anime_name(season, language.capitalize())
+
+
+def confirm_anime_name(season, language):
+
+    location = json_anime.get_location()
+    destination = json_anime.get_destination()
+
+    os.chdir(location)
+
+    file_name = ''
+
+    for file in os.listdir():
+
+        if file.endswith('mp4'):
+            # Only finds the name of the first file found, for if the downloads have different names, will use that name
+            # only
+            file_name = os.path.splitext(file)[0]
+            break
+
+    # Regex to find the name of the episode
+    name_pattern = re.compile(r'^([\[?][a-zA-Z]*[\]?])?[.\s]?([a-zA-Z\s]+)')
+    name_matches = name_pattern.finditer(file_name)
+
+    anime_name = ''
+
+    for match in name_matches:
+        anime_name = match.group(2)
+
+    if anime_name == '':
+        return
+
+    answer = input(f'\nThe name of this anime is: {anime_name}\n Is this correct? (y/n)\n')
+
+    if answer == 'y':
+
+        anime_name = anime_name.strip()
+        destination_directory = Path(f'E:\\Anime\\{anime_name}')
+
+        # Check to see if there is a directory with that name already before creating a new one
+        # Used just to promt a message
+        if not destination_directory.is_dir():
+            print(f'\nCreating a new file/directory for: {anime_name}')
+
+        destination_directory.mkdir(exist_ok=True)
+
+        destination_directory_season = Path(f'E:\\Anime\\{anime_name}\\Season {season}')
+        destination_directory_season.mkdir(exist_ok=True)
+
+        move_anime = dir(anime_name, location, destination, season, language)
+
+    elif answer == 'n':
+
+        new_anime_name = input('\nPlease enter the name of the anime then\n')
+        new_anime_name.strip()
+        destination_directory = Path(f'E:\\Anime\\{new_anime_name}')
+
+        if not destination_directory.is_dir():
+            print(f'\nCreating a new file/directory for: {new_anime_name}')
+
+        destination_directory.mkdir(exist_ok=True)
+
+        destination_directory_season = Path(f'E:\\Anime\\{new_anime_name.strip()}\\Season {season}')
+        destination_directory_season.mkdir(exist_ok=True)
+
+        move_anime = dir(new_anime_name, location, destination, season, language)
+
+    move_anime.file_renamer()

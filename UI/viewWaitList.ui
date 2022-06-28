@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>main_window</class>
+ <widget class="QDialog" name="main_window">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string/>
+  </property>
+  <widget class="QWidget" name="background_widget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>-1</x>
+     <y>-1</y>
+     <width>921</width>
+     <height>521</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget#background_widget {
+background-color: qlineargradient(spread:pad, x1:0, y1:0.261, x2:1, y2:0.71,stop:0 rgba(64, 64, 64, 255), stop:1 rgba(158, 158, 158, 255));
+}</string>
+   </property>
+   <widget class="QLabel" name="mainscreen_label">
+    <property name="geometry">
+     <rect>
+      <x>225</x>
+      <y>40</y>
+      <width>450</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#mainscreen_label {
+	font: 28pt &quot;MS Shell Dlg 2&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>Anime Mover and Renamer</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="listWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>130</y>
+      <width>680</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#listWidget{
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	color: white;
+	background-color: rgba(0, 0, 0, 50);
+	border-radius: 10px;
+	border: 1px solid black;
+	text-align: center;
+}</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="update_button">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>445</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#update_button {
+	border-radius: 15px;
+	background-color: rgba(36, 36, 36, 255);
+	color: white;
+	font: 13pt &quot;MS Shell Dlg 2&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>Update</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="delete_button">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>445</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#delete_button {
+	border-radius: 15px;
+	background-color: rgba(36, 36, 36, 255);
+	color: white;
+	font: 13pt &quot;MS Shell Dlg 2&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>Delete</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="display_label">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>295</y>
+      <width>680</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#display_label{
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	color: white;
+	background-color: rgba(0, 0, 0, 50);
+	border-radius: 10px;
+	border: 1px solid black;
+	text-align: center;
+}</string>
+    </property>
+    <property name="text">
+     <string>Double click on one of the entries to update or delete, or add a new entry by clicking the add button</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="name_input">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>345</y>
+      <width>591</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#name_input{
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	color: white;
+	background-color: rgba(0, 0, 0, 50);
+	border-radius: 10px;
+	border: 1px solid black;
+	text-align: center;
+}</string>
+    </property>
+    <property name="inputMethodHints">
+     <set>Qt::ImhNone</set>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="season_input">
+    <property name="geometry">
+     <rect>
+      <x>155</x>
+      <y>395</y>
+      <width>92</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#season_input{
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	color: white;
+	background-color: rgba(0, 0, 0, 50);
+	border-radius: 10px;
+	border: 1px solid black;
+	text-align: center;
+}</string>
+    </property>
+    <property name="inputMethodHints">
+     <set>Qt::ImhNone</set>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="language_input">
+    <property name="geometry">
+     <rect>
+      <x>375</x>
+      <y>395</y>
+      <width>92</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#language_input{
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	color: white;
+	background-color: rgba(0, 0, 0, 50);
+	border-radius: 10px;
+	border: 1px solid black;
+	text-align: center;
+}</string>
+    </property>
+    <property name="inputMethodHints">
+     <set>Qt::ImhNone</set>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="status_input">
+    <property name="geometry">
+     <rect>
+      <x>595</x>
+      <y>395</y>
+      <width>92</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#status_input{
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	color: white;
+	background-color: rgba(0, 0, 0, 50);
+	border-radius: 10px;
+	border: 1px solid black;
+	text-align: center;
+}</string>
+    </property>
+    <property name="inputMethodHints">
+     <set>Qt::ImhNone</set>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="back_button">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>445</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#back_button {
+	border-radius: 15px;
+	background-color: rgba(36, 36, 36, 255);
+	color: white;
+	font: 13pt &quot;MS Shell Dlg 2&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>Back</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="add_button">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>190</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#add_button {
+	border-radius: 15px;
+	background-color: rgba(36, 36, 36, 255);
+	color: white;
+	font: 13pt &quot;MS Shell Dlg 2&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>Add</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="add_button_2">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>445</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#add_button_2 {
+	border-radius: 15px;
+	background-color: rgba(36, 36, 36, 255);
+	color: white;
+	font: 13pt &quot;MS Shell Dlg 2&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>Add</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="message_box">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>90</y>
+      <width>680</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#message_box {
+	color: white;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="name_checkbox">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>345</y>
+      <width>90</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#name_checkbox{
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	color: white;
+	background-color: rgba(0, 0, 0, 50);
+	border-radius: 10px;
+	border: 1px solid black;
+}</string>
+    </property>
+    <property name="text">
+     <string>Name</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="season_checkbox">
+    <property name="geometry">
+     <rect>
+      <x>65</x>
+      <y>395</y>
+      <width>90</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#season_checkbox{
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	color: white;
+	background-color: rgba(0, 0, 0, 50);
+	border-radius: 10px;
+	border: 1px solid black;
+}</string>
+    </property>
+    <property name="text">
+     <string>Season</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="status_checkbox">
+    <property name="geometry">
+     <rect>
+      <x>505</x>
+      <y>395</y>
+      <width>90</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#status_checkbox{
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	color: white;
+	background-color: rgba(0, 0, 0, 50);
+	border-radius: 10px;
+	border: 1px solid black;
+}</string>
+    </property>
+    <property name="text">
+     <string>Status</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="language_checkbox">
+    <property name="geometry">
+     <rect>
+      <x>285</x>
+      <y>395</y>
+      <width>90</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#language_checkbox{
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	color: white;
+	background-color: rgba(0, 0, 0, 50);
+	border-radius: 10px;
+	border: 1px solid black;
+}</string>
+    </property>
+    <property name="text">
+     <string>Language</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

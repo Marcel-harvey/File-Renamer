@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>main_window</class>
+ <widget class="QDialog" name="main_window">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QWidget" name="background_widget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>-1</x>
+     <y>-1</y>
+     <width>921</width>
+     <height>521</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget#background_widget {
+background-color: qlineargradient(spread:pad, x1:0, y1:0.261, x2:1, y2:0.71,stop:0 rgba(64, 64, 64, 255), stop:1 rgba(158, 158, 158, 255));
+}</string>
+   </property>
+   <widget class="QLabel" name="mainscreen_label">
+    <property name="geometry">
+     <rect>
+      <x>225</x>
+      <y>40</y>
+      <width>450</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#mainscreen_label {
+	font: 28pt &quot;MS Shell Dlg 2&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>Anime Mover and Renamer</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="selected_paths_label">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>90</y>
+      <width>301</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#selected_paths_label {
+	font: 18pt &quot;MS Shell Dlg 2&quot;;
+	color: white;
+}</string>
+    </property>
+    <property name="text">
+     <string>Here are the selected paths</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="location_heading">
+    <property name="geometry">
+     <rect>
+      <x>285</x>
+      <y>195</y>
+      <width>331</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#location_heading{
+	font: 12pt &quot;MS Shell Dlg 2&quot;;
+	text-decoration: underline;
+}</string>
+    </property>
+    <property name="text">
+     <string>Location: Where the downloads can be located</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="destination_heading">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>280</y>
+      <width>361</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#destination_heading{
+	font: 12pt &quot;MS Shell Dlg 2&quot;;
+	text-decoration: underline;
+}</string>
+    </property>
+    <property name="text">
+     <string>Destination: Where you want to move the file to</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="location_output">
+    <property name="geometry">
+     <rect>
+      <x>265</x>
+      <y>235</y>
+      <width>371</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#location_output{
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	color: white;
+	background-color: rgba(0, 0, 0, 50);
+	border-radius: 10px;
+	border: 1px solid black;
+	text-align: center;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="margin">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="destination_output">
+    <property name="geometry">
+     <rect>
+      <x>265</x>
+      <y>320</y>
+      <width>371</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#destination_output{
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	color: white;
+	background-color: rgba(0, 0, 0, 50);
+	border-radius: 10px;
+	border: 1px solid black
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="back_button">
+    <property name="geometry">
+     <rect>
+      <x>395</x>
+      <y>410</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#back_button {
+	border-radius: 15px;
+	background-color: rgba(36, 36, 36, 255);
+	color: white;
+	font: 13pt &quot;MS Shell Dlg 2&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>Back</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
